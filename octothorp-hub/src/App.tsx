@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { ArrowRight, Server, Shield, FileText, Activity, PlayCircle, Globe, Terminal, ChevronRight } from 'lucide-react';
+import { ArrowRight, FileText, Activity, PlayCircle, Globe, Terminal, ChevronRight } from 'lucide-react';
 
 const customStyles = `
   .perspective-1000 { perspective: 1000px; }
@@ -171,7 +171,7 @@ function App() {
 
             <div className="py-[30vh] space-y-[60vh] pb-[30vh]">
               {journeySteps.map((step, index) => (
-                <div key={step.id} ref={(el) => (stepRefs.current[index] = el)} className={`transition-all duration-700 ${activeStep === index ? 'opacity-100 translate-x-0' : 'opacity-20 translate-x-8'}`}>
+                <div key={step.id} ref={(el) => { stepRefs.current[index] = el; }} className={`transition-all duration-700 ${activeStep === index ? 'opacity-100 translate-x-0' : 'opacity-20 translate-x-8'}`}>
                   <div className="w-16 h-16 bg-brand-charcoal border border-brand-granite rounded-2xl flex items-center justify-center mb-8">
                     {step.icon}
                   </div>
