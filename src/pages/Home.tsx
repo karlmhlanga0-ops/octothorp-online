@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { ArrowRight, Server, Shield, FileText, Activity, PlayCircle, Globe } from 'lucide-react';
+import { ArrowRight, FileText, Activity, PlayCircle, Globe } from 'lucide-react';
 
 const customStyles = `
   .perspective-1000 { perspective: 1000px; }
@@ -11,7 +11,6 @@ const customStyles = `
   .animate-float { animation: float 6s ease-in-out infinite; }
 `;
 
-// Final Vector Node Logo
 const NodeLogo = ({ className = "w-6 h-6 text-white" }) => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className={className}>
     <path d="M4 8h16M4 16h16M8 4v16M16 4v16" />
@@ -78,18 +77,17 @@ export default function Home() {
     return () => observer.disconnect();
   }, []);
 
-  const openDemo = () => window.open('/easyquote', '_blank');
+  // ALL ROADS LEAD TO ROME (The Demo)
+  const openDemo = () => window.open('/easyquote', '_self');
 
   return (
     <div className="min-h-screen bg-brand-dark selection:bg-mopane selection:text-brand-dark font-sans text-white relative">
       <style>{customStyles}</style>
 
-      {/* Subtle Bottom-Right Watermark */}
       <div className="fixed -bottom-[10%] -right-[5%] z-0 pointer-events-none flex items-center justify-center opacity-[0.02] text-white">
         <NodeLogo className="w-[50vw] h-[50vw] -rotate-12" />
       </div>
 
-      {/* Navigation */}
       <nav className="w-full border-b border-brand-granite/30 bg-brand-dark/90 backdrop-blur-xl fixed top-0 z-50">
         <div className="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
           <div className="flex items-center gap-4 group cursor-pointer">
@@ -104,7 +102,6 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* Hero Section */}
       <main className="pt-48 pb-32 px-6 min-h-screen flex items-center relative z-10">
         <div className="max-w-5xl mx-auto text-center space-y-10">
           <div className="inline-flex items-center gap-3 px-5 py-2 rounded-full bg-brand-charcoal/80 backdrop-blur border border-brand-granite text-xs font-bold text-white uppercase tracking-[0.2em]">
@@ -124,10 +121,12 @@ export default function Home() {
           </p>
           
           <div className="flex flex-col sm:flex-row justify-center gap-6 pt-10">
-            <button className="group flex items-center justify-center gap-3 bg-mopane text-brand-dark px-10 py-5 rounded-lg font-bold tracking-wide transition-all shadow-xl hover:bg-white active:scale-95">
-              Start Your Build
+            {/* CTA 1: Aggressive Audit Route */}
+            <button onClick={openDemo} className="group flex items-center justify-center gap-3 bg-mopane text-brand-dark px-10 py-5 rounded-lg font-bold tracking-wide transition-all shadow-xl hover:bg-white active:scale-95">
+              Audit Your Pipeline
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </button>
+            {/* CTA 2: Direct Demo Route */}
             <button onClick={openDemo} className="group flex items-center justify-center gap-3 bg-brand-charcoal border border-brand-granite text-white px-10 py-5 rounded-lg font-bold hover:border-white transition-all active:scale-95">
               <PlayCircle className="w-5 h-5 group-hover:scale-110 transition-transform" />
               View EasyQuote™ Demo
@@ -159,7 +158,6 @@ export default function Home() {
                       </div>
                     </div>
                     <div className="flex-1 flex items-center justify-center relative">
-                      {/* Dynamic Morphing Icons Based on activeStep */}
                       {activeStep === 0 && <Activity className="w-24 h-24 text-white animate-float z-10" />}
                       {activeStep === 1 && <Globe className="w-24 h-24 text-mopane animate-float z-10" />}
                       {activeStep === 2 && <FileText className="w-24 h-24 text-white animate-float z-10" />}
@@ -208,8 +206,8 @@ export default function Home() {
           </div>
           <div className="text-center pt-20 border-t border-brand-granite/30">
             <h2 className="text-5xl md:text-7xl font-display font-bold text-white mb-8">Ready to weaponize your operations?</h2>
-            <button className="bg-white text-brand-dark hover:bg-mopane px-12 py-6 rounded-lg font-bold tracking-widest uppercase transition-all shadow-xl hover:-translate-y-1 active:scale-95">
-              Reserve Your Deployment
+            <button onClick={openDemo} className="bg-white text-brand-dark hover:bg-mopane px-12 py-6 rounded-lg font-bold tracking-widest uppercase transition-all shadow-xl hover:-translate-y-1 active:scale-95">
+              Secure Your Deployment
             </button>
           </div>
         </div>
