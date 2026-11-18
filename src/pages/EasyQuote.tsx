@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { Send, CheckCircle, ArrowRight, ShieldCheck, Zap, Database, Settings, CreditCard, ChevronDown } from 'lucide-react';
 
+const contactUrl = 'https://wa.me/?text=Hi%2C%20I%27d%20like%20to%20get%20my%20EasyQuote%20setup%20for%20my%20recruitment%20business.';
+
 const EasyQuoteLogo = () => (
   <div className="w-10 h-10 rounded-xl bg-[#FFC107] flex items-center justify-center shadow-[0_0_20px_rgba(255,193,7,0.3)]">
     <span className="font-display font-bold text-2xl text-black tracking-tighter">Q</span>
@@ -35,9 +37,9 @@ export default function EasyQuote() {
             <EasyQuoteLogo />
             <span className="text-lg font-display font-bold tracking-widest uppercase">EasyQuote™</span>
           </div>
-          <button className="bg-[#FFC107] text-black px-6 py-2 rounded-lg font-bold hover:bg-yellow-400 transition-all text-sm hidden md:block active:scale-95">
-            Secure Deployment
-          </button>
+          <a href={contactUrl} className="bg-[#FFC107] text-black px-6 py-2 rounded-lg font-bold hover:bg-yellow-400 transition-all text-sm hidden md:block active:scale-95 whitespace-nowrap">
+            Get My EasyQuote Setup
+          </a>
         </div>
       </nav>
 
@@ -49,20 +51,18 @@ export default function EasyQuote() {
             Accepting New Deployments
           </div>
           
-          {/* FIX 2: Brought back the crossed-out hook */}
-          <h1 className="text-5xl md:text-7xl font-display font-bold leading-[1.05] tracking-tight text-white">
-            Stop losing deals to <br/>
-            <span className="text-[#666666] line-through decoration-[#FFC107] decoration-4">slow proposals.</span>
+          <h1 className="text-4xl sm:text-5xl md:text-7xl font-display font-bold leading-[1.05] tracking-tight text-white">
+            Send Perfect Quotes in 30 Seconds, Win the Placement
           </h1>
           
           <p className="text-xl text-[#AAAAAA] leading-relaxed max-w-lg">
-            Give your customers a professional, fully-branded PDF quote instantly, and push the data directly into your CRM. 
+            Send professional, fully-branded placement-fee quotes to your recruitment clients in seconds, with every lead flowing directly into your CRM.
           </p>
           <div className="flex gap-4 pt-4">
-            <button className="bg-[#FFC107] text-black px-8 py-4 rounded-xl font-bold tracking-wide transition-all shadow-[0_0_20px_rgba(255,193,7,0.2)] hover:scale-105 active:scale-95 flex items-center gap-2">
-              Deploy For $997
+            <a href={contactUrl} className="bg-[#FFC107] text-black px-5 sm:px-8 py-4 rounded-xl font-bold tracking-wide transition-all shadow-[0_0_20px_rgba(255,193,7,0.2)] hover:scale-105 active:scale-95 flex items-center gap-2 whitespace-nowrap">
+              Get My EasyQuote Setup
               <ArrowRight className="w-5 h-5" />
-            </button>
+            </a>
           </div>
         </div>
 
@@ -84,10 +84,10 @@ export default function EasyQuote() {
               <form onSubmit={(e) => { e.preventDefault(); setSubmitted(true); }} className="p-8 space-y-6">
                 <div className="border-b border-[#222222] pb-4 mb-6">
                   {/* FIX 4: Pure white headings */}
-                  <h3 className="text-xl font-display font-bold text-white">Test The Engine</h3>
+                  <h3 className="text-xl font-display font-bold text-white">Try a Recruiter Quote</h3>
                 </div>
                 <div className="space-y-2">
-                  <label className="text-xs font-bold uppercase tracking-wider text-[#AAAAAA]">Client Name</label>
+                  <label className="text-xs font-bold uppercase tracking-wider text-[#AAAAAA]">Recruitment Client Name</label>
                   <input required type="text" className="w-full bg-[#111111] border border-[#333333] rounded-xl p-3 focus:border-[#FFC107] outline-none text-white placeholder-[#555555]" placeholder="e.g. John Doe" />
                 </div>
                 <div className="space-y-4">
@@ -97,7 +97,7 @@ export default function EasyQuote() {
                   </div>
                   <input type="range" min="1" max="50" className="w-full h-2 bg-[#222222] rounded-lg appearance-none accent-[#FFC107] cursor-pointer" />
                 </div>
-                <button type="submit" className="w-full bg-[#FFC107] text-black font-bold py-4 rounded-xl flex items-center justify-center gap-2 hover:bg-yellow-400 transition-all active:scale-95 shadow-lg">
+                <button type="submit" className="w-full bg-[#FFC107] text-black font-bold py-4 rounded-xl flex items-center justify-center gap-2 hover:bg-yellow-400 transition-all active:scale-95 shadow-lg whitespace-nowrap text-sm sm:text-base">
                   Simulate PDF Generation <Send className="w-4 h-4" />
                 </button>
               </form>
@@ -144,12 +144,11 @@ export default function EasyQuote() {
            </div>
 
            <div className="w-full md:w-96 bg-black border border-[#FFC107]/30 rounded-2xl p-8 text-center relative z-10 shadow-[0_0_50px_rgba(255,193,7,0.1)]">
-             <div className="text-[#AAAAAA] font-bold tracking-widest uppercase text-xs mb-4">One-Time Setup</div>
-             <div className="text-6xl font-display font-bold text-white mb-2">$997</div>
-             <div className="text-[#AAAAAA] text-sm mb-8">+ $49/mo Maintenance & Hosting</div>
-             <button className="w-full bg-[#FFC107] text-black py-4 rounded-xl font-bold flex items-center justify-center gap-2 hover:scale-105 active:scale-95 transition-all shadow-lg">
-               <CreditCard className="w-5 h-5" /> Secure Your Instance
-             </button>
+             <div className="text-white font-display font-bold text-2xl mb-4">$997 One-Time White-Glove Setup</div>
+             <div className="text-[#AAAAAA] text-sm mb-8">I set it up for you personally. You send quotes same day.</div>
+             <a href={contactUrl} className="w-full bg-[#FFC107] text-black py-4 px-2 rounded-xl font-bold flex items-center justify-center gap-2 hover:scale-105 active:scale-95 transition-all shadow-lg whitespace-nowrap text-sm sm:text-base">
+               <CreditCard className="w-5 h-5 shrink-0" /> Get My EasyQuote Setup
+             </a>
            </div>
         </div>
       </section>

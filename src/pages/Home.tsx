@@ -120,17 +120,12 @@ export default function Home() {
             We architect bespoke, zero-touch operational infrastructure for South Africa's elite recruitment and training agencies.
           </p>
           
-          <div className="flex flex-col sm:flex-row justify-center gap-6 pt-10">
-            {/* CTA 1: Aggressive Audit Route */}
-            <button onClick={openDemo} className="group flex items-center justify-center gap-3 bg-mopane text-brand-dark px-10 py-5 rounded-lg font-bold tracking-wide transition-all shadow-xl hover:bg-white active:scale-95">
-              Audit Your Pipeline
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </button>
-            {/* CTA 2: Direct Demo Route */}
-            <button onClick={openDemo} className="group flex items-center justify-center gap-3 bg-brand-charcoal border border-brand-granite text-white px-10 py-5 rounded-lg font-bold hover:border-white transition-all active:scale-95">
+          <div className="flex justify-center pt-10">
+            <a href="/easyquote" className="group flex items-center justify-center gap-3 bg-mopane text-brand-dark px-10 py-5 rounded-lg font-bold tracking-wide transition-all shadow-xl hover:bg-white active:scale-95">
               <PlayCircle className="w-5 h-5 group-hover:scale-110 transition-transform" />
-              View EasyQuote™ Demo
-            </button>
+              See EasyQuote™
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </a>
           </div>
         </div>
       </main>
@@ -203,12 +198,6 @@ export default function Home() {
                 </div>
               </div>
             ))}
-          </div>
-          <div className="text-center pt-20 border-t border-brand-granite/30">
-            <h2 className="text-5xl md:text-7xl font-display font-bold text-white mb-8">Ready to weaponize your operations?</h2>
-            <button onClick={openDemo} className="bg-white text-brand-dark hover:bg-mopane px-12 py-6 rounded-lg font-bold tracking-widest uppercase transition-all shadow-xl hover:-translate-y-1 active:scale-95">
-              Secure Your Deployment
-            </button>
           </div>
         </div>
       </section>
